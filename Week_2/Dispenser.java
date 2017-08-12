@@ -30,10 +30,17 @@ public abstract class Dispenser {
 	}
 	//CHANGE PRICE WOULDNT I NEED TO EMPLEMENT double newPrice()?
 	public void changePrice(Product prod, double price) {
-		
+		for(int i = 0; i < items.length; i++) {
+			products.change(price, prod);
+    	}
+		return;
 	}
 	//ADD ITEMS
 	public void addStock(Product prod, int numToAdd) {
+		for(int i = 0; i < items.length; i++) {
+			products.add(numToAdd, prod);
+    	}
+		return;
 	}
 	//ITEMS IN AN ARRAY
 	public void displayProducts() {
@@ -44,7 +51,9 @@ public abstract class Dispenser {
 	}
 	//ITS SAYING ITS UNDEFINED, DO I ADD IT AS A STRING?
 	public int findProduct(Product prod) {
-		if (getName().contains(""));
+		if (Product.getName().contains(""));
+		return CAPACITY;
 	}
+	
 
 }
