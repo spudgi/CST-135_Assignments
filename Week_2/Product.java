@@ -1,6 +1,6 @@
 package application;
 
-public class Product {
+public abstract class Product {
 
 	String name;
 	double price;
@@ -23,29 +23,17 @@ public class Product {
 
 	
 	//getters and setters
-	public String getName() {
-		return this.name;
-	}
+	abstract String getName();
 	
-	public void setName(String name) {
-		this.name = name;
-	}
+	abstract void setName(String name);
 
-	public double getPrice() {
-		return this.price;
-	}
+	abstract double getPrice();
 	
-	public void setPrice(double price) {
-		this.price = price;
-	}
+	abstract void setPrice(double price);
 	
-	public int getQuantity() {
-		return this.quantity;
-	}
+	abstract int getQuantity();
 	
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+	abstract void setQuantity(int quantity) ;
 	
 	//toString
 	@Override
