@@ -2,6 +2,8 @@
 
 package application;
 
+import java.util.ArrayList;
+
 public abstract class Product implements Comparable<Product> {
 
 	private String name;
@@ -53,21 +55,22 @@ public abstract class Product implements Comparable<Product> {
 	//toString
 	@Override
     public String toString(){
-    	return "Name: " + this.getName() + "\nPrice: " + this.getPrice() + "\nQuantity: " + this.getQuantity() ;
+    	return "Products:" + compareTo(name) + "Name: " + this.getName() + "\nPrice: " + this.getPrice() + "\nQuantity: " + this.getQuantity() ;
     }
 	
-	public void bubbleSort(String[] name) {
-		boolean needNextPass = true;
-		for (int k = 1; k < name.length && needNextPass; k++) {
-			needNextPass = false;
-			for (int i = 0; i < name.length - k; i++) {
-				if (i > compareTo(name[i + 1])) {
-					String temp = name[i];
-					name[i] = name[i + 1];
-					name[i + 1] = temp;
-					needNextPass = true;
+	public static void bubbleSort(ArrayList<Candy> products) {
+		for (int x = 0; x < products.size(); x++) {
+			for (int y = 0; y <= x; y++){
+				if(products.get(y).getName().compareTo(products.get(x).getName()) > 0) {
+					Candy temp1 = products.get(x);
+					Candy temp2 = products.get(y);
+					products.set(x, temp2);
+					products.set(y,temp1);
 				}
 			}
+		}
+		for(int x = 0; x < products.size(); x++){
+			System.out.println(products.get(x).getName());
 		}
 	}
 	
