@@ -56,25 +56,25 @@ public abstract class Product implements Comparable<Product> {
     	return "Name: " + this.getName() + "\nPrice: " + this.getPrice() + "\nQuantity: " + this.getQuantity() ;
     }
 	
-	public void bubbleSort(int[] list) {
+	public void bubbleSort(String[] name) {
 		boolean needNextPass = true;
-		for (int k = 1; k < list.length && needNextPass; k++) {
+		for (int k = 1; k < name.length && needNextPass; k++) {
 			needNextPass = false;
-			for (int i = 0; i < list.length - k; i++) {
-				if (Product.compareTo(list[i + 1]) > 0) {
-					int temp = list[i];
-					list[i] = list[i + 1];
-					list[i + 1] = temp;
+			for (int i = 0; i < name.length - k; i++) {
+				if (i > compareTo(name[i + 1])) {
+					String temp = name[i];
+					name[i] = name[i + 1];
+					name[i + 1] = temp;
 					needNextPass = true;
 				}
 			}
 		}
 	}
 	
-	public int compareTo(Product prod) {
-		if(this.name.charAt(0) == prod.name.charAt(0))
+	public int compareTo(String prod) {
+		if(this.name.charAt(0) == name.charAt(0))
 			return 0;
-		else if (this.name.charAt(0) < prod.name.charAt(0))
+		else if (this.name.charAt(0) < name.charAt(0))
 			return 1;
 		else
 			return -1;
