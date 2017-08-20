@@ -1,8 +1,6 @@
-//class originally created by Caleb Miller and is his own code. Class updated by Stephan Foster.
+//class created by Caleb Miller and is his own code.
 
 package application;
-
-import java.util.ArrayList;
 
 public abstract class Product {
 
@@ -53,34 +51,28 @@ public abstract class Product {
 	};
 	
 	//toString
-	@Override
     public String toString(){
     	return "Name: " + this.getName() + "\nPrice: " + this.getPrice() + "\nQuantity: " + this.getQuantity() ;
-    }
+    }	
 	
-	public void bubbleSort(ArrayList<Product> products) {
-		for (int x = 0; x < products.size(); x++) {
-			for (int y = 0; y <= x; y++){
-				if(products.get(y).getName().compareTo(products.get(x).getName()) > 0) {
-					Product temp1 = products.get(x);
-					Product temp2 = products.get(y);
-					products.set(x, temp2);
-					products.set(y,temp1);
-				}
+		
+	//compareTo()
+    //@Override
+	public int compareTo(Product prod) {
+		if(prod.equals(this)) {
+			return 0;
+		}
+		else if (prod.name.equals(this.name)) {
+			if (prod.price > this.price) {
+				return 1;
+			}
+			else {
+				return -1;
 			}
 		}
-		for(int x = 0; x < products.size(); x++){
-			System.out.println(products.get(x).getName());
+		else {
+			return prod.name.compareTo(this.name);
 		}
-	}
-	
-	public int compareTo(String prod) {
-		if(this.name.charAt(0) == name.charAt(0))
-			return 0;
-		else if (this.name.charAt(0) < name.charAt(0))
-			return 1;
-		else
-			return -1;
 	}
 
 	public boolean sellOne() {

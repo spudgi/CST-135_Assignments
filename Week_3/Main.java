@@ -1,15 +1,17 @@
-//class originally created by Caleb Miller and is his own code. Class updated by Stephan Foster.
+//class created by Caleb Miller and is his own code.
 
 package application;
 
-import java.util.ArrayList;
-
 public abstract class Main {
-	
-	private static ArrayList<Product> products;
-	
+
 	public static void main(String[] args) {
-		Product.bubbleSort(products);
+	
+		Dispenser testDispenser = new Dispenser();
+		testDispenser.displayProducts();
+		//System.out.println(testDispenser.toString());
+
+
+		
 	}
 
 }
