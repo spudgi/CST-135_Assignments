@@ -5,16 +5,21 @@ import java.util.ArrayList;
 
 public class Dispenser {
 	
-	public ArrayList<Product> products = new ArrayList<Product>();
+	private ArrayList<Product> products = new ArrayList<Product>();
 	final int CAPACITY = 15;
 	// fix sized array
 	
 	
 	Dispenser() {
+		products.add(new Candy("Snickers", 1.75, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
+		products.add(new Candy("Twix", 1.75, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
+		products.add(new Candy("Almond Joy", 1.75, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
+		products.add(new Candy("Butter Finger", 1.75, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
 		products.add(new Candy("Kitkat", 1.75, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
 		products.add(new Chips("Wavy Lay's", .75, 1, 1.23, .98, 1.45, "Lay's", "Sour Cream and Onion"));
 		products.add(new Drink("Coke", 1.75, 1, "Coca-cola", "Classic"));
 		products.add(new Gum("Juicy Fruit", .89, 1, .55, .75, .98, "Wriggly's", "fruit", 16));
+		Product.bubbleSort(products);
 	}
 
 	//ADD PRODUCT

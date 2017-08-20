@@ -1,7 +1,7 @@
 //class originally created by Stephan Foster and is his own code. Class updated by Stephan Foster.
 package application;
 
-public class Candy extends Snack {
+public class Candy extends Snack{
 
 	private String brand, type;
 	
@@ -41,11 +41,5 @@ public class Candy extends Snack {
     public String toString(){
     	return "Name: " + this.getName() + "\nPrice: " + this.getPrice() + "\nQuantity: " + this.getQuantity() + "\nHeight: " + this.getHeight() + "\nWeight: " + this.getWeight() + "\nWidth: " + this.getWidth() + "\nBrand: " + this.brand + "\nType: " + this.type;
     }
-
-	@Override
-	public int compareTo(Product o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 }

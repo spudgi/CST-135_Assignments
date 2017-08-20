@@ -4,7 +4,7 @@ package application;
 
 import java.util.ArrayList;
 
-public abstract class Product implements Comparable<Product> {
+public abstract class Product {
 
 	private String name;
 	private double price;
@@ -41,7 +41,7 @@ public abstract class Product implements Comparable<Product> {
 	};
 	
 	void setQuantity(int quantity){
-		this.price = price;
+		this.quantity = quantity;
 	};
 	
 	double getQuantity() {
@@ -55,15 +55,15 @@ public abstract class Product implements Comparable<Product> {
 	//toString
 	@Override
     public String toString(){
-    	return "Products:" + compareTo(name) + "Name: " + this.getName() + "\nPrice: " + this.getPrice() + "\nQuantity: " + this.getQuantity() ;
+    	return "Name: " + this.getName() + "\nPrice: " + this.getPrice() + "\nQuantity: " + this.getQuantity() ;
     }
 	
-	public static void bubbleSort(ArrayList<Candy> products) {
+	public void bubbleSort(ArrayList<Product> products) {
 		for (int x = 0; x < products.size(); x++) {
 			for (int y = 0; y <= x; y++){
 				if(products.get(y).getName().compareTo(products.get(x).getName()) > 0) {
-					Candy temp1 = products.get(x);
-					Candy temp2 = products.get(y);
+					Product temp1 = products.get(x);
+					Product temp2 = products.get(y);
 					products.set(x, temp2);
 					products.set(y,temp1);
 				}

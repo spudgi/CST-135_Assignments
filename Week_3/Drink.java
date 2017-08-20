@@ -43,10 +43,4 @@ public class Drink extends Product {
     	
     }
 
-	@Override
-	public int compareTo(Product o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }

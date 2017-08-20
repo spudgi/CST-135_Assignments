@@ -4,14 +4,12 @@ package application;
 
 import java.util.ArrayList;
 
-public abstract class Main implements Comparable<Candy>{
+public abstract class Main {
+	
+	private static ArrayList<Product> products;
 	
 	public static void main(String[] args) {
-		ArrayList<Candy> products = new ArrayList<Candy>();
-		products.add(new Candy("Snickers", 1.75, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
-		products.add(new Candy("Twix", 1.75, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
-		products.add(new Candy("Almond Joy", 1.75, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
-		products.add(new Candy("Butter Finger", 1.75, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
 		Product.bubbleSort(products);
 	}
+
 }
