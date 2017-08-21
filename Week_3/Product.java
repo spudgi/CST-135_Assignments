@@ -2,6 +2,10 @@
 
 package application;
 
+//THIS CLASS SHOULD IMPLEMENT THE COMPARABLE INTERFACE
+
+//public abstract class Product implements Comparable<Product>
+
 public abstract class Product {
 
 	private String name;
@@ -73,12 +77,18 @@ public abstract class Product {
 		}
 	}
 		
+	
+//THE OVERRIDE NOTATION WOULD SHOW UP IF THE IMPLEMENTS COMPARABLE WAS
+	//PART OF THE CLASS DECLARATION.
+	
 	//compareTo()
     //@Override?
 	public int compareTo(Product prod) {
+		//NICE!
 		if(prod.equals(this)) {
 			return 0;
 		}
+		//WELL DONE - LOGIC SEEMS TO HOLD UP HERE.
 		else if (prod.name.equals(this.name)) {
 			if (prod.price > this.price) {
 				return 1;
