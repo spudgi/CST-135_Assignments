@@ -9,12 +9,11 @@ This milestone added a sorting method (bubbleSort) and the compareTo() method
 Please make sure you have the latest version of the Eclipse Oxygen for Java Developers IDE 
 installed before attempting to run the program.
 ```
-```
-The only files that were updated are 
+The files that were updated are 
 * **Main.java**
 * **Dispenser.java**
 * **Product.java**
-```
+
 
 ### Prerequisites
 
