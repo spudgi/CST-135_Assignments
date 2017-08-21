@@ -56,6 +56,22 @@ public abstract class Product {
     	return "Name: " + this.getName() + "\nPrice: " + this.getPrice() + "\nQuantity: " + this.getQuantity() ;
     }	
 	
+	//Provided by Lydia Fritz
+	@Override
+	public boolean equals(Object arg0){
+		if(arg0 instanceof Product){
+		Product p = (Product)arg0;
+			if(p.price == this.price && p.name.equals(this.name)){
+			return true;
+			}
+		else {
+			return false;
+			}
+		}
+		else {
+			return false;
+		}
+	}
 		
 	//compareTo()
     //@Override?
