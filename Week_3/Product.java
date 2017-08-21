@@ -51,13 +51,14 @@ public abstract class Product {
 	};
 	
 	//toString
+	@Override
     public String toString(){
     	return "Name: " + this.getName() + "\nPrice: " + this.getPrice() + "\nQuantity: " + this.getQuantity() ;
     }	
 	
 		
 	//compareTo()
-    //@Override
+    //@Override?
 	public int compareTo(Product prod) {
 		if(prod.equals(this)) {
 			return 0;

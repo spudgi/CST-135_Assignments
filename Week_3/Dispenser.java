@@ -14,6 +14,7 @@ public class Dispenser {
 		this.addProduct(new Candy("Snickers", 1.75, 1, .6, 1.00, 1.00, "Mars", "chocolate bar"));
 		this.addProduct(new Candy("Twix", 1.75, 1, .6, 1.00, 1.00, "Mars", "chocolate bar"));
 		this.addProduct(new Candy("Almond Joy", 1.75, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
+		this.addProduct(new Candy("Almond Joy", 1.50, 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
 		this.addProduct(new Candy("Butter Finger", 1.75, 1, .6, 1.00, 1.00, "Nestle", "chocolate bar"));
 		this.addProduct(new Candy("Kitkat", 1.75, 1, .6, 1.00, 1.00, "Nestle", "chocolate bar"));
 		this.addProduct(new Chips("Wavy Lay's", .75, 1, 1.23, .98, 1.45, "Frito-Lay", "Sour Cream and Onion"));
@@ -70,7 +71,18 @@ public class Dispenser {
 		return -1;
 	}
 	
-	//bubbleSort
+	//bubbleSort Had to call upon Stephan for a little help, 
+	
+	//for (int h = 0; h < products.size() && needNextPass; h++) {
+	//needNextPass = false;
+	//for (int i = 0; i < products.size(); i++) {
+	//if (list[i] > list[i + 1]) {
+	// Swap list[i] with list[i + 1]
+	//int temp = list[i];
+	//list[i] = list[i + 1];
+	//list[i + 1] = temp;
+	//needNextPass = true;
+	
 	public static void bubbleSort(ArrayList<Product> products) {
 		for (int i = 0; i < products.size(); i++) {
 			for (int h = 0; h <= i; h++) {
