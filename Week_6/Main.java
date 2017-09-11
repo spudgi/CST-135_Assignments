@@ -16,7 +16,7 @@ public class Main {
 		String line;
 		for(int x = 0; x < sn; x++) {
 			line = fileReader.nextLine();
-			//Stephan taught me what and how to use printf
+			//**Stephan taught me what and how to use printf**//
 			System.out.printf("%-20s %-20s\n", line, isFlop(line));
 		}
 		fileReader.close();
@@ -32,7 +32,7 @@ public class Main {
 		if(str.charAt(1) == 'H') {
 			return true;
 		}
-		if(isFlap(str.substring(1)) && str.charAt(1) == 'B' && isFlap(str.substring(2))) {
+		if(isFlap(str.substring(1)) || str.charAt(1) == 'B' && isFlap(str.substring(2))) {
 			int index = 3;
 			while(index != str.length() && str.charAt(index) != 'C') {
 				index++;
@@ -48,10 +48,7 @@ public class Main {
 		if(str.length() < 3) {
 			return false;
 		}
-		if(str.charAt(0) != 'D' && str.charAt(0) != 'E') {
-			return false;
-		}
-		if(str.charAt(1) != 'F') {
+		if(str.charAt(0) != 'D' && str.charAt(0) != 'E' || str.charAt(1) != 'F') {
 			return false;
 		}
 		
@@ -59,10 +56,7 @@ public class Main {
 		while(index < str.length() && str.charAt(index) == 'F') {
 			index++;
 		}
-		if(index == str.length()) {
-			return false;
-		}
-		if(index == str.length() && str.charAt(index) == 'G') {
+		if(index != str.length() && str.charAt(index) == 'G') {
 			return true;
 		}
 		if(isFlap(str.substring(index))) {
