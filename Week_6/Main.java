@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		URL url = new URL("https://raw.githubusercontent.com/spudgi/CST-135_Assignments/master/Week_6/flipFlapFlop.in");
+		URL url = new URL("https://raw.githubusercontent.com/spudgi/CST-135_Assignments/master/Week_6/flipFlapFlop.in"); 
 		Scanner fileReader = new Scanner(new InputStreamReader(url.openStream()));
 		int sn = 4;
 		
@@ -32,7 +32,7 @@ public class Main {
 		if(str.charAt(1) == 'H') {
 			return true;
 		}
-		if(isFlap(str.substring(1)) || str.charAt(1) == 'B' && isFlap(str.substring(2))) {
+		if(isFlap(str.substring(1)) || str.charAt(1) == 'B' && isFlip(str.substring(2))) {
 			int index = 3;
 			while(index != str.length() && str.charAt(index) != 'C') {
 				index++;
