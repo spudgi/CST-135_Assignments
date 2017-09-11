@@ -16,13 +16,12 @@ public class Main extends Application {
 	Footer footer = new Footer();
 	leftPane lp = new leftPane();
 	rightPane rp = new rightPane();
-	VendingGrid vg = new VendingGrid(myDispenser.displayProducts());
+	VendingGrid vg = new VendingGrid(myDispenser);
 	BorderPane root = new BorderPane();
-	BossGrid bg = new BossGrid();
+	BossGrid bg = new BossGrid(myDispenser);
 	
 	@Override
 	public void start(Stage primaryStage) {
-		try {	
 			root.setLeft(lp);
 			root.setRight(rp);
 			root.setCenter(vg);
@@ -31,23 +30,24 @@ public class Main extends Application {
 			root.setBottom(footer);
 			
 			//Create and show()
-			Scene scene = new Scene(root,900,800);
+			Scene scene = new Scene(root,900,900);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Vending Machine");
 			primaryStage.show();
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}	
 	}
 	
 	private void setButton() {
+		Button closeBtn = rightPane.getcloseBtn();
 		Button Btn = rightPane.getBtn_changePane();
 		Btn.setOnAction(e-> {
+			BossGrid bg = new BossGrid(myDispenser);
+			closeBtn.setOpacity(1);
 			root.setCenter(bg);
 		});
 		Button Btn1 = rightPane.getBtn_root();
 		Btn1.setOnAction(e-> {
+			VendingGrid vg = new VendingGrid(myDispenser);
+			closeBtn.setOpacity(0);
 			root.setCenter(vg);
 		});
 	}

@@ -53,7 +53,7 @@ public abstract class Product implements Comparable<Product> {
 		this.quantity = quantity;
 	};
 	
-	double getQuantity() {
+	int getQuantity() {
 		return this.quantity;
 	};
 	

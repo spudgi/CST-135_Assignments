@@ -15,8 +15,9 @@ public class VendingGrid extends GridPane {
 			}
 		}	
 	}
-	public VendingGrid(ArrayList<VendingCell> products) {
-		this.setStyle("-fx-background-color: rgb(56, 26, 117)");
+	public VendingGrid(Dispenser myDispenser) {
+		this.setStyle("-fx-background-color: rgb(73,47,146)");
+		ArrayList<Product> products = myDispenser.getProducts();
 		int rows,col,productNum = 0;
 		if(products.size() > 10 && products.size() <= 15){
 			rows = 3;
@@ -30,7 +31,7 @@ public class VendingGrid extends GridPane {
 		for(int row = 0; row < rows; row++){
 			for(col = 0; col < 5; col++){
 				if(productNum < products.size()){
-					VendingCell vc = products.get(productNum);
+					VendingCell vc = new VendingCell(myDispenser,productNum);
 					this.add(vc, col, row);
 					productNum++;					
 				}

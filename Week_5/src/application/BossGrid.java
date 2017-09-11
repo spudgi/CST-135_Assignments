@@ -1,3 +1,4 @@
+//Class created by Caleb Miller and is his own work. Modified by Stephan Foster.
 package application;
 
 import java.util.ArrayList;
@@ -9,13 +10,13 @@ public class BossGrid extends GridPane {
 	public BossGrid() {
 		for(int row = 0; row < 3; row++){
 			for(int col = 0; col < 5; col++){
-				BossCell bc = new BossCell();
-				this.add(bc, col, row);
+				VendingCell vc = new VendingCell();
+				this.add(vc, col, row);
 			}
 		}	
 	}
-	public BossGrid(ArrayList<BossCell> products) {
-		this.setStyle("-fx-background-color: rgb(0, 0, 0)");
+	public BossGrid(Dispenser myDispenser) {
+		ArrayList<Product> products = myDispenser.getProducts();
 		int rows,col,productNum = 0;
 		if(products.size() > 10 && products.size() <= 15){
 			rows = 3;
@@ -29,12 +30,11 @@ public class BossGrid extends GridPane {
 		for(int row = 0; row < rows; row++){
 			for(col = 0; col < 5; col++){
 				if(productNum < products.size()){
-					BossCell bc = products.get(productNum);
-					this.add(bc, col, row);
+					BossCell vc = new BossCell(myDispenser,productNum);
+					this.add(vc, col, row);
 					productNum++;					
 				}
 			}
 		}		
 	}
 }
-

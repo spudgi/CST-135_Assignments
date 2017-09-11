@@ -11,7 +11,7 @@ public class Dispenser {
 	
 	
 	Dispenser() {
-		this.addProduct(new Candy("Snickers", 1.75, "SnickersVM.png", 1, .6, 1.00, 1.00, "Mars", "chocolate bar"));
+		this.addProduct(new Candy("Snickers", 1.75, "SnickersVM.png", 5, .6, 1.00, 1.00, "Mars", "chocolate bar"));
 		this.addProduct(new Candy("Twix", 1.75, "TwixVM.png", 1, .6, 1.00, 1.00, "Mars", "chocolate bar"));
 		this.addProduct(new Candy("Almond Joy", 1.75, "AlmondJoyVM.png", 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
 		this.addProduct(new Candy("Almond Joy", 1.50, "AlmondJoyVM.png", 1, .6, 1.00, 1.00, "Hersey's", "chocolate bar"));
@@ -52,16 +52,19 @@ public class Dispenser {
 			products.get(x).setPrice(price);
 	}
 
-	//add stock back in  find item and update quantity
-
-	//ITEMS IN AN ARRAY
-	//updated by Stephan Foster
-	public ArrayList<VendingCell> displayProducts(){
-		ArrayList<VendingCell> productCells = new ArrayList<VendingCell>();
-		for(int i = 0; i < products.size(); i++) {
-    		productCells.add(new VendingCell(products.get(i).getName(),products.get(i).getImage(),products.get(i).getPrice()));
-    	}
-    	return productCells;
+	public ArrayList<Product> getProducts(){
+		return this.products;
+	}
+	
+	//add stock back in  find item and update quantity **NEED NOW**
+	public Boolean sellProduct(String name){
+		for(int x = 0; x < products.size(); x++){
+			if(products.get(x).getName().toLowerCase() == name.toLowerCase()){
+				products.get(x).sellOne();
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	//find product looks for product in array and returns index
