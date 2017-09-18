@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Dispenser {
 	
 	private ArrayList<Product> products = new ArrayList<Product>();
+	private ArrayList<Product> shoppingCart = new ArrayList<Product>();
 	final int CAPACITY = 15;
 	// fix sized array
 	
@@ -57,8 +58,12 @@ public class Dispenser {
 		return this.products;
 	}
 	
+	public ArrayList<Product> getShoppingCart(){
+		return this.shoppingCart;
+	}
+	
 	//add stock back in  find item and update quantity **NEED NOW**
-	public Boolean sellProduct(String name){
+	public boolean sellProduct(String name){
 		for(int x = 0; x < products.size(); x++){
 			if(products.get(x).getName().toLowerCase() == name.toLowerCase()){
 				products.get(x).sellOne();
@@ -68,6 +73,15 @@ public class Dispenser {
 		return false;
 	}
 	
+	public boolean addCart(Product prod) {
+		if(prod.getQuantity() < 1) {
+			return false;
+		}
+		shoppingCart.add(prod);
+		prod.sellOne();
+		return true;
+		
+	}
 	//find product looks for product in array and returns index
 	public int findProduct(Product prod){
 		for(int h = 0; h < products.size(); h++){

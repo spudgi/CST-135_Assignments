@@ -32,7 +32,7 @@ public class rightPane extends VBox {
 
 	public rightPane() {
 		this.setStyle("-fx-background-color: rgb(0,0,0)");
-		Btn_root.setText("Customer View");
+		Btn_root.setText("Shop");
 		Btn_root.setOpacity(.1);
 		Btn_changePane.setText("Boss View");
 		Btn_changePane.setOpacity(.1);

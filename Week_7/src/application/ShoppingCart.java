@@ -1,15 +1,33 @@
 package application;
 
+import java.util.ArrayList;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 
 public class ShoppingCart extends GridPane {
 	
-	public ShoppingCart() {
-		this.setStyle("-fx-background-color: rgb(73,47,146)");
-		this.setStyle("-fx-text-fill: white");
-		//this.setFont(Font.font("MS Arial", FontWeight.BOLD, 12));
-	}
+	
+	public ShoppingCart(Dispenser myDispenser) {
+			this.setStyle("-fx-background-color: rgb(73,47,146)");
+			ArrayList<Product> products = myDispenser.getShoppingCart();
+			int rows,col,productNum = 0;
+			if(products.size() > 10 && products.size() <= 15){
+				rows = 3;
+			}
+			else if (products.size() > 5 && products.size() <= 10){
+				rows = 2;
+			}
+			else {
+				rows = 1;
+			}
+			for(int row = 0; row < rows; row++){
+				for(col = 0; col < 5; col++){
+					if(productNum < products.size()){
+						ShoppingCell sc = new ShoppingCell(myDispenser,productNum);
+						this.add(sc, col, row);
+						productNum++;					
+					}
+				}
+			}		
+		}
 
 }

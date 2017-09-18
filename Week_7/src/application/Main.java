@@ -54,7 +54,7 @@ public class Main extends Application {
 		});
 		Button Btn2 = rightPane.getBtn_sc();
 		Btn2.setOnAction(e-> {
-			ShoppingCart shc = new ShoppingCart();
+			ShoppingCart shc = new ShoppingCart(myDispenser);
 			Btn_root.setOpacity(1);
 			root.setCenter(shc);
 		});
