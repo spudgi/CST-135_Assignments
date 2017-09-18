@@ -1,4 +1,4 @@
-//Class originaly made by Caleb Miller and is his own work
+//Class made by Caleb Miller and is his own work
 package application;
 
 import javafx.event.ActionEvent;
