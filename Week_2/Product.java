@@ -15,6 +15,7 @@ public abstract class Product {
 		this.quantity = quantity;
 	}
 	
+	//Overload
 	Product(Product prod) {
 		this.name = prod.name;
 		this.price = prod.price;
@@ -37,9 +38,10 @@ public abstract class Product {
 	
 	//toString
 	@Override
-	public String toString() {
-		return this.getClass().getName() + '@' + Integer.toHexString((int) getPrice());
-	}
+    public String toString(){
+    	return "Name: " + this.getName() + "\nPrice: " + this.getPrice() + "\nQuantity: " + this.getQuantity();
+    }
+
 	
 	//boolean
 	private boolean sellOne(double price) {

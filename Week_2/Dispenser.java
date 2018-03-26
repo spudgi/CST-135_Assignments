@@ -1,8 +1,9 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Dispenser {
+public class Dispenser {
 	
 	private ArrayList<Product> products;
 
@@ -13,51 +14,55 @@ public abstract class Dispenser {
 	Dispenser() {
 	}
 
+	//ADD PRODUCT
 	boolean addProduct(Product prod) {
 		for(int i = 0; i < items.length; i++) {
-			products.add(prod);
+			((List<Product>) prod).add(prod);
     	}
 		return false;
 		
 	}
 	
+	//REMOVE PRODUCT
 	boolean removeProduct(Product prod) {
 		for(int i = 0; i < items.length; i++) {
-			products.remove(prod);
+			((List<Product>) prod).remove(prod);
     	}
 		return false;
 
 	}
 	
-	//CHANGE PRICE WOULDNT I NEED TO EMPLEMENT double newPrice()?
+	//CHANGE PRICE 
 	public void changePrice(Product prod, double price) {
-		for(int i = 0; i < items.length; i++) {
-			products.change(price, prod);
-    	}
-		return;
+			prod.price = price;
 	}
 	
 	//ADD ITEMS
 	public void addStock(Product prod, int numToAdd) {
 		for(int i = 0; i < items.length; i++) {
-			products.add(numToAdd, prod);
+			((List<Product>) prod).add(numToAdd, prod);
     	}
 		return;
 	}
-	
+
 	//ITEMS IN AN ARRAY
-	public void displayProducts() {
+	public void displayProducts(Product prod) {
     	for(int i = 0; i < items.length; i++) {
-    		products.get(i).toString();
+    		((List<Product>) prod).get(i).toString();
     	}
     	return;
 	}
 	
-	//ITS SAYING ITS UNDEFINED, DO I ADD IT AS A STRING?
+	//FIND PRODUCTS
 	public int findProduct(Product prod) {
-		if (Product.getName().contains(""));
+		if (prod.getName().contains(""));
 		return CAPACITY;
 	}
 	
+	//toString()
+    public String toString(){
+    	return "Name: " + products.getClass().getName() + ":\n" + products.toString() + "\n\n";
+    	
+    }
 
 }
