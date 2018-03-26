@@ -1,6 +1,10 @@
 //class created by Caleb Miller and is his own code.
 
 package application;
+//THIS CLASS NEEDS TO IMPLEMENT THE COMPARABLE INTERFACE...
+
+//public abstract class Product implements Comparable<Product> {
+
 
 public abstract class Product {
 
@@ -72,9 +76,18 @@ public abstract class Product {
 			return false;
 		}
 	}
-		
+	
+	
+	//SO, THIS WOULD SHOW UP AS AN OVERRIDE IF THE CLASS IMPLEMENTED THE COMPARABLE INTERFACE...
+	//TRY IT AND SEE.
+	
 	//compareTo()
     //@Override?
+	//ALSO, THIS CODE LOOKS IDENTICAL TO CALEB'S - I NOTICE THAT BECAUSE THE 
+	//METHOD YOU'VE CHOSEN HERE IS UNIQUE IN THAT IT UTILIZES THE .EQUALS METHOD
+	
+	//I DON'T MIND IF YOU COLLABORATE, BUT EACH OF YOU SHOULD CODE YOUR OWN SOLUTION
+	
 	public int compareTo(Product prod) {
 		if(prod.equals(this)) {
 			return 0;
